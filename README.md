@@ -73,7 +73,7 @@ PUBLIC_KEY_PATH=keys/public.pem
 ### 5. Generate a certificate + QR
 
 ```bash
-python main.py--json sample.json 
+python main.py --json sample.json 
 ```
 
 This will:
