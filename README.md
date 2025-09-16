@@ -13,7 +13,7 @@ This project lets you:
 
 ```
 .
-├── main_generate.py      # Entry point for certificate generation
+├── main.py               # Entry point for certificate generation
 ├── pdf_gen.py            # Builds PDF and embeds /CertPayload
 ├── verifier.py           # Offline CLI verifier
 ├── sign.py               # Signing & verification helpers
@@ -73,17 +73,14 @@ PUBLIC_KEY_PATH=keys/public.pem
 ### 5. Generate a certificate + QR
 
 ```bash
-python main_generate.py \
-  --json sample_cert.json \
-  --pdf-out out/certificate.pdf \
-  --qr-out out/certificate.qr.png \
-  --no-upload
+python main.py--json sample.json 
 ```
 
 This will:
 - Sign the certificate JSON with your private key.
 - Embed `{ cert, sig }` into the PDF metadata `/CertPayload`.
 - Generate a QR code PNG via `qr_utils.py` for verification (for browser verifier use).
+- Add the QR code in the signed pdf and save the pdf in `{/out}`.
 
 ### 6. Verify a certificate offline
 
